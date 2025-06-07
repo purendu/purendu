@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Categories - E-Book Store Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">E-Book<span>Store</span> Admin</a></h1>
+            </div>
+            <div class="nav-icons">
+                <a href="#" class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </a>
+                <a href="#" class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="../index.html" class="view-site">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="books.html">
+                            <i class="fas fa-book"></i>
+                            <span>E-Books</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="categories.html">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customers.html">
+                            <i class="fas fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reviews.html">
+                            <i class="fas fa-star"></i>
+                            <span>Reviews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="page-header">
+                <h2>Manage Categories</h2>
+                <p>Organize your e-books with categories</p>
+            </div>
+
+            <!-- Categories Layout -->
+            <div class="categories-layout">
+                <!-- Add/Edit Category Form -->
+                <div class="category-form-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 id="category-form-title">Add New Category</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="category-form">
+                                <input type="hidden" id="category-id">
+                                <div class="form-group">
+                                    <label for="category-name">Category Name</label>
+                                    <input type="text" id="category-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category-slug">Slug</label>
+                                    <input type="text" id="category-slug" required>
+                                    <small>The slug is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category-parent">Parent Category</label>
+                                    <select id="category-parent">
+                                        <option value="">None</option>
+                                        <option value="1">Technology</option>
+                                        <option value="2">Business</option>
+                                        <option value="3">Self Development</option>
+                                        <option value="4">Fiction</option>
+                                        <option value="5">Design</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category-description">Description</label>
+                                    <textarea id="category-description" rows="4"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category-icon">Icon (Font Awesome Class)</label>
+                                    <input type="text" id="category-icon" placeholder="fa-book">
+                                    <small>Enter a Font Awesome icon class (e.g., fa-book, fa-laptop, fa-chart-bar)</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category-image">Category Image</label>
+                                    <div class="file-upload">
+                                        <input type="file" id="category-image" accept="image/*">
+                                        <label for="category-image" class="file-upload-label">
+                                            <i class="fas fa-cloud-upload-alt"></i> Choose File
+                                        </label>
+                                        <span class="file-name">No file chosen</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-secondary" id="reset-category-form">Reset</button>
+                                    <button type="submit" class="btn-primary" id="save-category">Add Category</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories List -->
+                <div class="categories-list-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Categories</h3>
+                            <div class="search-filter">
+                                <input type="text" id="category-search" placeholder="Search categories...">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="categories-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Slug</th>
+                                        <th>Parent</th>
+                                        <th>Books</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="category-info">
+                                                <i class="fas fa-laptop category-icon"></i>
+                                                <span>Technology</span>
+                                            </div>
+                                        </td>
+                                        <td>technology</td>
+                                        <td>-</td>
+                                        <td>42</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="#" class="edit-btn" title="Edit" data-id="1"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="delete-btn" title="Delete" data-id="1"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="category-info">
+                                                <i class="fas fa-code category-icon"></i>
+                                                <span>Programming</span>
+                                            </div>
+                                        </td>
+                                        <td>programming</td>
+                                        <td>Technology</td>
+                                        <td>18</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="#" class="edit-btn" title="Edit" data-id="6"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="delete-btn" title="Delete" data-id="6"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="category-info">
+                                                <i class="fas fa-chart-line category-icon"></i>
+                                                <span>Business</span>
+                                            </div>
+                                        </td>
+                                        <td>business</td>
+                                        <td>-</td>
+                                        <td>35</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="#" class="edit-btn" title="Edit" data-id="2"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="delete-btn" title="Delete" data-id="2"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="category-info">
+                                                <i class="fas fa-brain category-icon"></i>
+                                                <span>Self Development</span>
+                                            </div>
+                                        </td>
+                                        <td>self-development</td>
+                                        <td>-</td>
+                                        <td>28</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="#" class="edit-btn" title="Edit" data-id="3"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="delete-btn" title="Delete" data-id="3"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="category-info">
+                                                <i class="fas fa-book category-icon"></i>
+                                                <span>Fiction</span>
+                                            </div>
+                                        </td>
+                                        <td>fiction</td>
+                                        <td>-</td>
+                                        <td>45</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="#" class="edit-btn" title="Edit" data-id="4"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="delete-btn" title="Delete" data-id="4"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="category-info">
+                                                <i class="fas fa-paint-brush category-icon"></i>
+                                                <span>Design</span>
+                                            </div>
+                                        </td>
+                                        <td>design</td>
+                                        <td>-</td>
+                                        <td>22</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="#" class="edit-btn" title="Edit" data-id="5"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="delete-btn" title="Delete" data-id="5"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="category-info">
+                                                <i class="fas fa-pencil-alt category-icon"></i>
+                                                <span>Graphic Design</span>
+                                            </div>
+                                        </td>
+                                        <td>graphic-design</td>
+                                        <td>Design</td>
+                                        <td>15</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="#" class="edit-btn" title="Edit" data-id="7"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="delete-btn" title="Delete" data-id="7"><i class="fas fa-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Delete</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this category? All books in this category will be uncategorized.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancel-delete">Cancel</button>
+                <button class="btn-danger" id="confirm-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <div class="container">
+            <p>&copy; 2023 E-Book Store Admin Panel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category form elements
+            const categoryForm = document.getElementById('category-form');
+            const categoryFormTitle = document.getElementById('category-form-title');
+            const categoryIdInput = document.getElementById('category-id');
+            const categoryNameInput = document.getElementById('category-name');
+            const categorySlugInput = document.getElementById('category-slug');
+            const categoryParentSelect = document.getElementById('category-parent');
+            const categoryDescriptionInput = document.getElementById('category-description');
+            const categoryIconInput = document.getElementById('category-icon');
+            const categoryImageInput = document.getElementById('category-image');
+            const resetCategoryFormBtn = document.getElementById('reset-category-form');
+            const saveCategoryBtn = document.getElementById('save-category');
+
+            // Auto-generate slug from name
+            categoryNameInput.addEventListener('input', function() {
+                const name = this.value;
+                const slug = name.toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+                    .replace(/\s+/g, '-') // Replace spaces with hyphens
+                    .replace(/-+/g, '-'); // Replace multiple hyphens with a single hyphen
+                categorySlugInput.value = slug;
+            });
+
+            // Reset form
+            function resetCategoryForm() {
+                categoryForm.reset();
+                categoryIdInput.value = '';
+                categoryFormTitle.textContent = 'Add New Category';
+                saveCategoryBtn.textContent = 'Add Category';
+            }
+
+            resetCategoryFormBtn.addEventListener('click', resetCategoryForm);
+
+            // File upload preview
+            categoryImageInput.addEventListener('change', function() {
+                const fileName = this.files.length > 0 ? this.files[0].name : 'No file chosen';
+                this.nextElementSibling.nextElementSibling.textContent = fileName;
+            });
+
+            // Save category
+            categoryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (this.checkValidity()) {
+                    // Simulate saving category
+                    const isEditing = categoryIdInput.value !== '';
+                    alert(`Category ${isEditing ? 'updated' : 'added'} successfully!`);
+                    resetCategoryForm();
+                } else {
+                    this.reportValidity();
+                }
+            });
+
+            // Edit category
+            const editBtns = document.querySelectorAll('.edit-btn');
+            editBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const categoryId = this.getAttribute('data-id');
+                    const row = this.closest('tr');
+                    const name = row.querySelector('.category-info span').textContent;
+                    const slug = row.querySelector('td:nth-child(2)').textContent;
+                    const parent = row.querySelector('td:nth-child(3)').textContent;
+                    const iconClass = row.querySelector('.category-icon').className.replace('fas ', '');
+
+                    // Fill the form with category data
+                    categoryIdInput.value = categoryId;
+                    categoryNameInput.value = name;
+                    categorySlugInput.value = slug;
+                    categoryParentSelect.value = parent === '-' ? '' : 
+                        Array.from(categoryParentSelect.options).find(option => option.text === parent)?.value || '';
+                    categoryIconInput.value = iconClass;
+                    categoryDescriptionInput.value = `Description for ${name} category`; // Placeholder
+
+                    // Update form title and button text
+                    categoryFormTitle.textContent = 'Edit Category';
+                    saveCategoryBtn.textContent = 'Update Category';
+
+                    // Scroll to form
+                    document.querySelector('.category-form-container').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Delete category
+            const deleteBtns = document.querySelectorAll('.delete-btn');
+            const deleteModal = document.getElementById('delete-modal');
+            const cancelDeleteBtn = document.getElementById('cancel-delete');
+            const confirmDeleteBtn = document.getElementById('confirm-delete');
+            let categoryToDelete = null;
+
+            deleteBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    deleteModal.style.display = 'flex';
+                    categoryToDelete = this.closest('tr');
+                });
+            });
+
+            document.querySelectorAll('.close-modal').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    deleteModal.style.display = 'none';
+                });
+            });
+
+            cancelDeleteBtn.addEventListener('click', function() {
+                deleteModal.style.display = 'none';
+                categoryToDelete = null;
+            });
+
+            confirmDeleteBtn.addEventListener('click', function() {
+                if (categoryToDelete) {
+                    categoryToDelete.remove();
+                    alert('Category deleted successfully!');
+                    deleteModal.style.display = 'none';
+                    categoryToDelete = null;
+                }
+            });
+
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', function(event) {
+                if (event.target === deleteModal) {
+                    deleteModal.style.display = 'none';
+                }
+            });
+
+            // Search functionality
+            const categorySearch = document.getElementById('category-search');
+            categorySearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const categoryRows = document.querySelectorAll('.categories-table tbody tr');
+                
+                categoryRows.forEach(row => {
+                    const name = row.querySelector('.category-info span').textContent.toLowerCase();
+                    const slug = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                    const parent = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+                    
+                    if (name.includes(searchTerm) || slug.includes(searchTerm) || parent.includes(searchTerm)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+
+            // Add styles for categories page
+            const style = document.createElement('style');
+            style.textContent = `
+                .categories-layout {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    gap: 20px;
+                }
+
+                .card {
+                    background-color: var(--admin-card-bg);
+                    border-radius: 10px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                    overflow: hidden;
+                }
+
+                .card-header {
+                    padding: 15px 20px;
+                    border-bottom: 1px solid var(--admin-border);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .card-header h3 {
+                    margin: 0;
+                    font-size: 1.2rem;
+                    color: var(--admin-dark);
+                }
+
+                .card-body {
+                    padding: 20px;
+                }
+
+                .form-group {
+                    margin-bottom: 20px;
+                }
+
+                .form-group label {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-weight: 500;
+                }
+
+                .form-group input,
+                .form-group select,
+                .form-group textarea {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid var(--admin-border);
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                }
+
+                .form-group small {
+                    display: block;
+                    margin-top: 5px;
+                    font-size: 0.8rem;
+                    color: var(--admin-text-muted);
+                }
+
+                .form-actions {
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 10px;
+                    margin-top: 20px;
+                }
+
+                .file-upload {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                }
+
+                .file-upload input[type="file"] {
+                    display: none;
+                }
+
+                .file-upload-label {
+                    padding: 8px 12px;
+                    background-color: var(--admin-light);
+                    border: 1px solid var(--admin-border);
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    margin-right: 10px;
+                }
+
+                .file-name {
+                    font-size: 0.9rem;
+                    color: var(--admin-text-muted);
+                }
+
+                .categories-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+
+                .categories-table th,
+                .categories-table td {
+                    padding: 12px 15px;
+                    text-align: left;
+                    border-bottom: 1px solid var(--admin-border);
+                }
+
+                .categories-table th {
+                    background-color: var(--admin-light);
+                    color: var(--admin-text);
+                    font-weight: 600;
+                }
+
+                .categories-table tbody tr:hover {
+                    background-color: rgba(74, 108, 247, 0.05);
+                }
+
+                .category-info {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .category-icon {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: rgba(74, 108, 247, 0.1);
+                    color: var(--admin-primary);
+                    border-radius: 5px;
+                    margin-right: 10px;
+                }
+
+                .action-buttons {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                .edit-btn,
+                .delete-btn {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    text-decoration: none;
+                    transition: background-color 0.3s ease;
+                }
+
+                .edit-btn {
+                    background-color: var(--admin-info);
+                }
+
+                .edit-btn:hover {
+                    background-color: #138496;
+                }
+
+                .delete-btn {
+                    background-color: var(--admin-danger);
+                }
+
+                .delete-btn:hover {
+                    background-color: #c82333;
+                }
+
+                .btn-primary {
+                    background-color: var(--admin-primary);
+                    color: white;
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+
+                .btn-primary:hover {
+                    background-color: #3a5bd9;
+                }
+
+                .btn-secondary {
+                    background-color: var(--admin-secondary);
+                    color: white;
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+
+                .btn-secondary:hover {
+                    background-color: #5a6268;
+                }
+
+                .btn-danger {
+                    background-color: var(--admin-danger);
+                    color: white;
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+
+                .btn-danger:hover {
+                    background-color: #c82333;
+                }
+
+                @media (max-width: 992px) {
+                    .categories-layout {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Book Store Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">E-Book<span>Store</span> Admin</a></h1>
+            </div>
+            <div class="nav-icons">
+                <a href="#" class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </a>
+                <a href="#" class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="../index.html" class="view-site">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="books.html">
+                            <i class="fas fa-book"></i>
+                            <span>E-Books</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customers.html">
+                            <i class="fas fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reviews.html">
+                            <i class="fas fa-star"></i>
+                            <span>Reviews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="page-header">
+                <h2>Dashboard</h2>
+                <p>Welcome back, Admin!</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-card-content">
+                        <h3>Total Books</h3>
+                        <p class="stat-number">156</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 12% from last month</p>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-content">
+                        <h3>Total Sales</h3>
+                        <p class="stat-number">₹45,678</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 8% from last month</p>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-content">
+                        <h3>Total Customers</h3>
+                        <p class="stat-number">1,245</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 5% from last month</p>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-content">
+                        <h3>Pending Orders</h3>
+                        <p class="stat-number">24</p>
+                        <p class="stat-change negative"><i class="fas fa-arrow-down"></i> 3% from last month</p>
+                    </div>
+                    <div class="stat-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <div class="section-header">
+                    <h3>Recent Activity</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon order">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>New Order #1234</h4>
+                            <p>John Doe purchased "Web Design Essentials"</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-action">
+                            <a href="#" class="btn-sm">View</a>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon review">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>New Review</h4>
+                            <p>Sarah Johnson left a 5-star review on "Business Strategy"</p>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+                        <div class="activity-action">
+                            <a href="#" class="btn-sm">View</a>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon book">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>New Book Added</h4>
+                            <p>"Modern Technology" was added to the store</p>
+                            <span class="activity-time">1 day ago</span>
+                        </div>
+                        <div class="activity-action">
+                            <a href="#" class="btn-sm">View</a>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon user">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>New Customer</h4>
+                            <p>Michael Brown created an account</p>
+                            <span class="activity-time">2 days ago</span>
+                        </div>
+                        <div class="activity-action">
+                            <a href="#" class="btn-sm">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Overview -->
+            <div class="sales-overview">
+                <div class="section-header">
+                    <h3>Sales Overview</h3>
+                    <div class="period-selector">
+                        <select>
+                            <option value="week">This Week</option>
+                            <option value="month" selected>This Month</option>
+                            <option value="year">This Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="sales-chart">
+                    <!-- Chart Placeholder -->
+                    <div class="chart-placeholder">
+                        <div class="chart-bars">
+                            <div class="chart-bar" style="height: 60%;"><span>Mon</span></div>
+                            <div class="chart-bar" style="height: 80%;"><span>Tue</span></div>
+                            <div class="chart-bar" style="height: 40%;"><span>Wed</span></div>
+                            <div class="chart-bar" style="height: 70%;"><span>Thu</span></div>
+                            <div class="chart-bar" style="height: 90%;"><span>Fri</span></div>
+                            <div class="chart-bar" style="height: 50%;"><span>Sat</span></div>
+                            <div class="chart-bar" style="height: 30%;"><span>Sun</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Selling Books -->
+            <div class="top-selling-books">
+                <div class="section-header">
+                    <h3>Top Selling Books</h3>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="books-table-container">
+                    <table class="books-table">
+                        <thead>
+                            <tr>
+                                <th>Book</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Sales</th>
+                                <th>Revenue</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <img src="../images/book1.svg" alt="Web Design Essentials">
+                                        <div>
+                                            <h4>Web Design Essentials</h4>
+                                            <p>John Smith</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Technology</td>
+                                <td>₹499</td>
+                                <td>125</td>
+                                <td>₹62,375</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="#" class="edit-btn"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="delete-btn"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <img src="../images/book2.svg" alt="Business Strategy">
+                                        <div>
+                                            <h4>Business Strategy</h4>
+                                            <p>Sarah Johnson</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Business</td>
+                                <td>₹599</td>
+                                <td>98</td>
+                                <td>₹58,702</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="#" class="edit-btn"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="delete-btn"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <img src="../images/book3.svg" alt="Self Development">
+                                        <div>
+                                            <h4>Self Development</h4>
+                                            <p>Michael Brown</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Self Development</td>
+                                <td>₹399</td>
+                                <td>87</td>
+                                <td>₹34,713</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="#" class="edit-btn"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="delete-btn"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <img src="../images/book4.svg" alt="Fiction Adventure">
+                                        <div>
+                                            <h4>Fiction Adventure</h4>
+                                            <p>Emily Davis</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Fiction</td>
+                                <td>₹349</td>
+                                <td>76</td>
+                                <td>₹26,524</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="#" class="edit-btn"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="delete-btn"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="book-info">
+                                        <img src="../images/book5.svg" alt="Graphic Design">
+                                        <div>
+                                            <h4>Graphic Design</h4>
+                                            <p>Alex Wilson</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Design</td>
+                                <td>₹449</td>
+                                <td>65</td>
+                                <td>₹29,185</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="#" class="edit-btn"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="delete-btn"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <div class="container">
+            <p>&copy; 2023 E-Book Store Admin Panel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

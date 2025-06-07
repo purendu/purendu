@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Book Store - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/micro-interactions.css">
+    <link rel="stylesheet" href="css/mobile-first.css">
+    <link rel="stylesheet" href="css/personalization.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Dark Mode Toggle Button -->
+    <div class="theme-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+    
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Notification Container -->
+    <div class="notification" id="notification"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.svg" alt="E-Book Store Logo"></a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <div class="nav-overlay" id="navOverlay"></div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="user-icon" id="userIcon"><i class="fas fa-user"></i></a>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Discover a World of Knowledge</h1>
+                <p>Explore our vast collection of premium e-books that will transform your learning experience.</p>
+                <a href="categories.html" class="btn btn-primary">Browse Collection</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-ebook.svg" alt="E-books collection">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books Section -->
+    <section class="featured-books">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured E-Books</h2>
+                <p>Handpicked selections from our best-selling collection</p>
+            </div>
+            <div class="books-grid">
+                <!-- Book cards will be dynamically loaded here -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="images/book1.svg" alt="Book 1">
+                        <div class="book-overlay">
+                            <a href="#" class="preview-btn">Preview</a>
+                            <a href="#" class="add-to-cart-btn">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>The Digital Revolution</h3>
+                        <p class="book-category">Technology</p>
+                        <p class="book-price">₹499</p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="images/book2.svg" alt="Book 2">
+                        <div class="book-overlay">
+                            <a href="#" class="preview-btn">Preview</a>
+                            <a href="#" class="add-to-cart-btn">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Modern Web Design</h3>
+                        <p class="book-category">Design</p>
+                        <p class="book-price">₹599</p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="images/book3.svg" alt="Book 3">
+                        <div class="book-overlay">
+                            <a href="#" class="preview-btn">Preview</a>
+                            <a href="#" class="add-to-cart-btn">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Business Strategy</h3>
+                        <p class="book-category">Business</p>
+                        <p class="book-price">₹699</p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="images/book4.svg" alt="Book 4">
+                        <div class="book-overlay">
+                            <a href="#" class="preview-btn">Preview</a>
+                            <a href="#" class="add-to-cart-btn">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Creative Writing</h3>
+                        <p class="book-category">Arts</p>
+                        <p class="book-price">₹399</p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span>(3.5)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="categories.html" class="btn btn-secondary">View All Books</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our E-Books?</h2>
+                <p>Experience the advantages of our premium digital content</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Read Anywhere</h3>
+                    <p>Access your e-books on any device, anytime, anywhere.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Preview Before Purchase</h3>
+                    <p>Sample our e-books before making your decision.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Delivery</h3>
+                    <p>Get your e-books delivered instantly after purchase.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Go green with digital books and reduce paper waste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Browse by Categories</h2>
+                <p>Find the perfect e-book in your preferred genre</p>
+            </div>
+            <div class="categories-grid">
+                <a href="categories.html?category=technology" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Technology</h3>
+                    <p>25+ Books</p>
+                </a>
+                <a href="categories.html?category=business" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business</h3>
+                    <p>30+ Books</p>
+                </a>
+                <a href="categories.html?category=design" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design</h3>
+                    <p>15+ Books</p>
+                </a>
+                <a href="categories.html?category=self-development" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Self Development</h3>
+                    <p>20+ Books</p>
+                </a>
+                <a href="categories.html?category=fiction" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Fiction</h3>
+                    <p>40+ Books</p>
+                </a>
+                <a href="categories.html" class="category-card view-all">
+                    <div class="category-icon">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h3>View All Categories</h3>
+                    <p>150+ Books</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Reading Journey?</h2>
+                <p>Sign up now and get 10% off on your first purchase!</p>
+                <form class="cta-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>E-Book<span>Store</span></h3>
+                    <p>Your premier destination for high-quality e-books across various categories.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-categories">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="categories.html?category=technology">Technology</a></li>
+                        <li><a href="categories.html?category=business">Business</a></li>
+                        <li><a href="categories.html?category=design">Design</a></li>
+                        <li><a href="categories.html?category=self-development">Self Development</a></li>
+                        <li><a href="categories.html?category=fiction">Fiction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Book Street, Reading City</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> info@ebookstore.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 E-BookStore. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Register Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+            </div>
+            <div class="auth-content">
+                <div class="auth-form login-form active">
+                    <h2>Login to Your Account</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <div class="form-group remember-forgot">
+                            <div>
+                                <input type="checkbox" id="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+                </div>
+                <div class="auth-form register-form">
+                    <h2>Create an Account</h2>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerName">Full Name</label>
+                            <input type="text" id="registerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" id="registerPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="termsAgree" required>
+                            <label for="termsAgree">I agree to the <a href="#">Terms & Conditions</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Support Widget -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <h3>Chat Support</h3>
+                <span class="close-chat">&times;</span>
+            </div>
+            <div class="chat-messages">
+                <div class="message support">
+                    <div class="message-content">
+                        <p>Hello! How can I help you today?</p>
+                        <span class="message-time">10:00 AM</span>
+                    </div>
+                </div>
+                <!-- More messages will be added dynamically -->
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content preview-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="preview-header">
+                <h2>Book Preview</h2>
+            </div>
+            <div class="preview-content">
+                <div class="preview-book-info">
+                    <img src="images/book1.svg" alt="Book Cover" class="preview-book-cover">
+                    <div class="preview-book-details">
+                        <h3 class="preview-book-title">The Digital Revolution</h3>
+                        <p class="preview-book-author">By John Smith</p>
+                        <p class="preview-book-category">Technology</p>
+                        <div class="preview-book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <p class="preview-book-price">₹499</p>
+                        <button class="btn btn-primary add-to-cart-preview">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="preview-book-description">
+                    <h4>Description</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Comprehensive guide to digital transformation</li>
+                        <li>Real-world case studies and examples</li>
+                        <li>Practical strategies for implementation</li>
+                        <li>Future trends and predictions</li>
+                    </ul>
+                </div>
+                <div class="preview-book-sample">
+                    <h4>Sample Preview</h4>
+                    <div class="book-reader">
+                        <div class="book-page">
+                            <h2>Chapter 1: The Beginning of Change</h2>
+                            <p>The digital revolution began in earnest during the latter half of the 20th century, marking a profound shift from mechanical and analog electronic technology to digital electronics. This transition fundamentally altered how humans interact with information and with each other.</p>
+                            <p>In the early days of computing, machines were enormous, expensive, and accessible only to governments, large corporations, and academic institutions. The ENIAC (Electronic Numerical Integrator and Computer), completed in 1945, weighed more than 30 tons and occupied a room larger than most modern apartments.</p>
+                            <p>But the trajectory of computing would change dramatically with the invention of the transistor in 1947 by Bell Laboratories scientists John Bardeen, Walter Brattain, and William Shockley. This tiny component would eventually replace the bulky vacuum tubes that powered early computers, setting the stage for miniaturization.</p>
+                            <div class="page-number">Page 1</div>
+                        </div>
+                        <div class="book-navigation">
+                            <button class="btn-prev" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                            <span>Page 1 of 5</span>
+                            <button class="btn-next">Next <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/micro-interactions.js"></script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="js/personalization.js"></script>
+
+    <!-- Featured Books Section ends here -->
+
+    <!-- Personalized Recommendations Section -->
+    <section class="personalized-section">
+        <div class="container">
+            <div class="personalized-header">
+                <div>
+                    <h2 class="personalized-title">Recommended for You</h2>
+                    <p class="personalized-subtitle">Based on your reading history and preferences</p>
+                </div>
+                <div class="personalized-controls">
+                    <button class="personalized-refresh" id="refreshRecommendations">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            </div>
+            <div class="personalized-grid">
+                <!-- Personalized Book Cards will be dynamically inserted here -->
+                <!-- Sample Book Card -->
+                <div class="book-card">
+                    <div class="book-img-container">
+                        <img src="images/book3.svg" alt="Book Cover" class="book-img">
+                        <div class="book-overlay">
+                            <div class="book-overlay-btns">
+                                <button class="btn btn-light book-preview-btn">Preview</button>
+                                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">AI and the Future</h3>
+                        <p class="book-author">By Sarah Johnson</p>
+                        <p class="book-category">Technology</p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <p class="book-price">₹599</p>
+                    </div>
+                </div>
+                <!-- End Sample Book Card -->
+            </div>
+            
+            <!-- Reading History Section -->
+            <div class="reading-history">
+                <div class="personalized-header">
+                    <h2 class="personalized-title">Continue Reading</h2>
+                </div>
+                <div class="history-list">
+                    <!-- Sample History Item -->
+                    <div class="history-item">
+                        <img src="images/book2.svg" alt="Book Cover" class="history-img">
+                        <div class="history-info">
+                            <h3 class="history-title">Business Strategy</h3>
+                            <p class="history-author">By Michael Porter</p>
+                            <p class="history-progress-text">Page 45 of 320 (14%)</p>
+                            <div class="history-progress">
+                                <div class="history-progress-bar" style="width: 14%;"></div>
+                            </div>
+                        </div>
+                        <div class="history-actions">
+                            <button class="history-action-btn">
+                                <i class="fas fa-book-open"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- End Sample History Item -->
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Personalized Recommendations Section ends here -->
+    
+    <!-- Reading History Section ends -->
+    
+    <!-- User Preferences Panel -->
+    <div class="preferences-panel" id="preferencesPanel">
+        <div class="preferences-header">
+            <h3>Your Reading Preferences</h3>
+            <button class="preferences-close" id="closePreferences">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="preferences-body">
+            <div class="preference-group">
+                <label>Favorite Categories</label>
+                <div class="preference-categories">
+                    <div class="preference-category">
+                        <input type="checkbox" id="prefFiction" name="category" value="Fiction">
+                        <label for="prefFiction">Fiction</label>
+                    </div>
+                    <div class="preference-category">
+                        <input type="checkbox" id="prefBusiness" name="category" value="Business">
+                        <label for="prefBusiness">Business</label>
+                    </div>
+                    <div class="preference-category">
+                        <input type="checkbox" id="prefTechnology" name="category" value="Technology">
+                        <label for="prefTechnology">Technology</label>
+                    </div>
+                    <div class="preference-category">
+                        <input type="checkbox" id="prefSelfHelp" name="category" value="Self-Help">
+                        <label for="prefSelfHelp">Self-Help</label>
+                    </div>
+                    <div class="preference-category">
+                        <input type="checkbox" id="prefBiography" name="category" value="Biography">
+                        <label for="prefBiography">Biography</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preference-group">
+                <label>Price Range</label>
+                <div class="price-slider-container">
+                    <input type="range" id="priceRange" min="0" max="2000" step="100" value="1000">
+                    <div class="price-range-values">
+                        <span>₹0</span>
+                        <span id="priceRangeValue">₹1000</span>
+                        <span>₹2000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preference-group">
+                <label>Reading Format</label>
+                <div class="preference-format">
+                    <div class="preference-format-option">
+                        <input type="radio" id="formatEbook" name="format" value="ebook" checked>
+                        <label for="formatEbook">E-Book</label>
+                    </div>
+                    <div class="preference-format-option">
+                        <input type="radio" id="formatAudio" name="format" value="audio">
+                        <label for="formatAudio">Audiobook</label>
+                    </div>
+                    <div class="preference-format-option">
+                        <input type="radio" id="formatBoth" name="format" value="both">
+                        <label for="formatBoth">Both</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preference-actions">
+                <button class="btn btn-outline" id="resetPreferences">Reset</button>
+                <button class="btn btn-primary" id="savePreferences">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Preferences Toggle Button -->
+    <button class="preferences-toggle" id="openPreferences">
+        <i class="fas fa-sliders-h"></i>
+        <span>Preferences</span>
+    </button>
+</body>
+</html>

@@ -1,0 +1,322 @@
+/**
+ * Mobile-First Responsive Design
+ * Enhances website appearance and usability on mobile devices
+ */
+
+/* Base mobile-first styles */
+:root {
+    --container-padding: 15px;
+    --card-gap: 15px;
+    --section-spacing: 40px;
+}
+
+/* Container adjustments for mobile-first */
+.container {
+    width: 100%;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    margin: 0 auto;
+}
+
+/* Responsive typography */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+/* Mobile navigation */
+.mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+.nav-links a {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.nav-overlay.active {
+    display: block;
+}
+
+/* Mobile-friendly hero section */
+.hero {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    margin-bottom: 25px;
+}
+
+.hero-btns .btn {
+    margin: 5px;
+    display: inline-block;
+    width: auto;
+}
+
+/* Mobile-friendly grid layouts */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--card-gap);
+}
+
+/* Book cards for mobile */
+.book-card {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.book-img {
+    height: 200px;
+}
+
+/* Category cards for mobile */
+.category-section .grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Benefits section for mobile */
+.benefits-section .grid {
+    grid-template-columns: 1fr;
+}
+
+/* Footer for mobile */
+.footer .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Form elements for mobile */
+input, textarea, select, .btn {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+}
+
+/* Cart and checkout for mobile */
+.cart-section .grid {
+    grid-template-columns: 1fr;
+}
+
+.cart-items, .cart-summary {
+    width: 100%;
+}
+
+.cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cart-item-img {
+    margin-bottom: 10px;
+}
+
+/* Modal adjustments for mobile */
+.modal-content {
+    width: 95%;
+    max-width: 500px;
+    padding: 15px;
+}
+
+.login-register-container {
+    flex-direction: column;
+}
+
+.login-form, .register-form {
+    width: 100%;
+}
+
+/* Tablet breakpoint */
+@media (min-width: 576px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .category-section .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .cart-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .cart-item-img {
+        margin-bottom: 0;
+    }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 768px) {
+    :root {
+        --container-padding: 20px;
+        --card-gap: 20px;
+        --section-spacing: 60px;
+    }
+    
+    .container {
+        max-width: 720px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        flex-direction: row;
+        box-shadow: none;
+    }
+    
+    .nav-links a {
+        margin: 0 15px;
+        font-size: 1rem;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .benefits-section .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer .grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    .cart-section .grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+    }
+    
+    .login-register-container {
+        flex-direction: row;
+    }
+    
+    .login-form, .register-form {
+        width: 48%;
+    }
+}
+
+/* Large desktop breakpoint */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .category-section .grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Extra large desktop breakpoint */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) {
+    .book-overlay {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .book-overlay-btns {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Logo adjustments */
+.logo img {
+    max-height: 40px;
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    .logo img {
+        max-height: 50px;
+    }
+}

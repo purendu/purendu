@@ -1,0 +1,28 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#f4f4f4" />
+  
+  <!-- Person Silhouette -->
+  <g>
+    <!-- Head -->
+    <circle cx="150" cy="100" r="60" fill="#6c63ff" />
+    
+    <!-- Face Placeholder -->
+    <circle cx="150" cy="100" r="50" fill="#ffffff" opacity="0.2" />
+    
+    <!-- Simplified Face Features -->
+    <circle cx="130" cy="90" r="5" fill="#ffffff" />
+    <circle cx="170" cy="90" r="5" fill="#ffffff" />
+    <path d="M130,120 Q150,140 170,120" stroke="#ffffff" stroke-width="3" fill="none" />
+    
+    <!-- Body -->
+    <path d="M150,160 L150,250 M110,190 L190,190" stroke="#6c63ff" stroke-width="10" />
+    
+    <!-- Shoulders -->
+    <path d="M150,160 L100,180 M150,160 L200,180" stroke="#6c63ff" stroke-width="8" />
+  </g>
+  
+  <!-- Name Tag -->
+  <rect x="75" y="260" width="150" height="30" rx="5" fill="#6c63ff" />
+  <text x="150" y="280" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">John Doe</text>
+</svg>

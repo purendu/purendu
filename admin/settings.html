@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - E-Book Store Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">E-Book<span>Store</span> Admin</a></h1>
+            </div>
+            <div class="nav-icons">
+                <a href="#" class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </a>
+                <a href="#" class="admin-profile">
+                    <img src="../images/team1.svg" alt="Admin">
+                </a>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="books.html">
+                            <i class="fas fa-book"></i>
+                            <span>E-Books</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customers.html">
+                            <i class="fas fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reviews.html">
+                            <i class="fas fa-star"></i>
+                            <span>Reviews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="page-header">
+                <h2>Settings</h2>
+                <p>Manage your store settings</p>
+            </div>
+
+            <div class="settings-container">
+                <!-- General Settings Section -->
+                <div class="settings-section">
+                    <h3>General Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="store-name">Store Name</label>
+                            <input type="text" id="store-name" value="E-Book Store" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="store-email">Store Email</label>
+                            <input type="email" id="store-email" value="contact@ebookstore.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="store-phone">Store Phone</label>
+                            <input type="text" id="store-phone" value="+1 (555) 123-4567" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="store-address">Store Address</label>
+                            <textarea id="store-address" class="form-control">123 E-Book Street, Digital City, DC 10101</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency" class="form-control">
+                                <option value="USD" selected>USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                                <option value="INR">INR (₹)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Save General Settings</button>
+                    </form>
+                </div>
+
+                <!-- Appearance Settings Section -->
+                <div class="settings-section">
+                    <h3>Appearance Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="theme">Theme</label>
+                            <select id="theme" class="form-control">
+                                <option value="light" selected>Light</option>
+                                <option value="dark">Dark</option>
+                                <option value="auto">Auto (System Preference)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="primary-color">Primary Color</label>
+                            <input type="color" id="primary-color" value="#4a6cf7" class="form-control color-picker">
+                        </div>
+                        <div class="form-group">
+                            <label for="logo">Logo</label>
+                            <div class="file-upload">
+                                <input type="file" id="logo" class="form-control-file">
+                                <label for="logo" class="file-upload-label">Choose File</label>
+                                <span class="file-name">No file chosen</span>
+                            </div>
+                            <div class="current-logo">
+                                <p>Current Logo:</p>
+                                <img src="../images/logo.svg" alt="Current Logo" width="150">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="favicon">Favicon</label>
+                            <div class="file-upload">
+                                <input type="file" id="favicon" class="form-control-file">
+                                <label for="favicon" class="file-upload-label">Choose File</label>
+                                <span class="file-name">No file chosen</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Save Appearance Settings</button>
+                    </form>
+                </div>
+
+                <!-- Email Settings Section -->
+                <div class="settings-section">
+                    <h3>Email Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="smtp-host">SMTP Host</label>
+                            <input type="text" id="smtp-host" value="smtp.example.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="smtp-port">SMTP Port</label>
+                            <input type="number" id="smtp-port" value="587" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="smtp-username">SMTP Username</label>
+                            <input type="text" id="smtp-username" value="user@example.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="smtp-password">SMTP Password</label>
+                            <input type="password" id="smtp-password" value="********" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email-encryption">Encryption</label>
+                            <select id="email-encryption" class="form-control">
+                                <option value="tls" selected>TLS</option>
+                                <option value="ssl">SSL</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="from-email">From Email</label>
+                            <input type="email" id="from-email" value="noreply@ebookstore.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="from-name">From Name</label>
+                            <input type="text" id="from-name" value="E-Book Store" class="form-control">
+                        </div>
+                        <button type="button" class="btn secondary-btn">Test Email Settings</button>
+                        <button type="submit" class="btn primary-btn">Save Email Settings</button>
+                    </form>
+                </div>
+
+                <!-- Payment Settings Section -->
+                <div class="settings-section">
+                    <h3>Payment Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Payment Methods</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="payment-paypal" checked>
+                                    <label for="payment-paypal">PayPal</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="payment-stripe" checked>
+                                    <label for="payment-stripe">Stripe</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="payment-bank">
+                                    <label for="payment-bank">Bank Transfer</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="payment-cod">
+                                    <label for="payment-cod">Cash on Delivery</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="payment-upi" checked>
+                                    <label for="payment-upi">UPI Payment</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="paypal-email">PayPal Email</label>
+                            <input type="email" id="paypal-email" value="payments@ebookstore.com" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="stripe-key">Stripe Public Key</label>
+                            <input type="text" id="stripe-key" value="pk_test_sample" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="stripe-secret">Stripe Secret Key</label>
+                            <input type="password" id="stripe-secret" value="sk_test_sample" class="form-control">
+                        </div>
+                        
+                        <!-- UPI Payment Settings -->
+                        <div class="form-group upi-settings">
+                            <label for="upi-id">UPI ID</label>
+                            <input type="text" id="upi-id" value="ebookstore@upi" class="form-control">
+                        </div>
+                        <div class="form-group upi-settings">
+                            <label>UPI QR Code</label>
+                            <div class="current-qr">
+                                <p>Current QR Code:</p>
+                                <img src="../images/upi-qr.svg" alt="UPI QR Code" width="150">
+                            </div>
+                            <div class="file-upload">
+                                <input type="file" id="upi-qr" class="form-control-file">
+                                <label for="upi-qr" class="file-upload-label">Update QR Code</label>
+                                <span class="file-name">No file chosen</span>
+                            </div>
+                        </div>
+                        <div class="form-group upi-settings">
+                            <label for="upi-instructions">Payment Instructions</label>
+                            <textarea id="upi-instructions" class="form-control">Scan the QR code or use the UPI ID to make your payment. Please include your order number in the payment description.</textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn primary-btn">Save Payment Settings</button>
+                    </form>
+                </div>
+
+                <!-- Security Settings Section -->
+                <div class="settings-section">
+                    <h3>Security Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="two-factor">Two-Factor Authentication</label>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="two-factor" class="toggle-input">
+                                <label for="two-factor" class="toggle-label"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="session-timeout">Session Timeout (minutes)</label>
+                            <input type="number" id="session-timeout" value="30" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password-policy">Password Policy</label>
+                            <select id="password-policy" class="form-control">
+                                <option value="strong" selected>Strong (min. 8 chars, uppercase, lowercase, number, special)</option>
+                                <option value="medium">Medium (min. 8 chars, uppercase, lowercase, number)</option>
+                                <option value="basic">Basic (min. 6 chars)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Save Security Settings</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .settings-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .settings-section {
+            background-color: var(--admin-card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .settings-section h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--admin-dark);
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--admin-border);
+            padding-bottom: 10px;
+        }
+
+        .settings-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--admin-text);
+        }
+
+        .form-control {
+            padding: 10px;
+            border: 1px solid var(--admin-border);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--admin-primary);
+            outline: none;
+        }
+
+        .color-picker {
+            height: 40px;
+            padding: 5px;
+            width: 100px;
+        }
+
+        .file-upload {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-control-file {
+            display: none;
+        }
+
+        .file-upload-label {
+            background-color: var(--admin-light);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            background-color: var(--admin-border);
+        }
+
+        .file-name {
+            color: var(--admin-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .current-logo {
+            margin-top: 10px;
+        }
+
+        .current-logo p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: var(--admin-text-muted);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-label {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .toggle-label:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        .toggle-input:checked + .toggle-label {
+            background-color: var(--admin-primary);
+        }
+
+        .toggle-input:checked + .toggle-label:before {
+            transform: translateX(26px);
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .primary-btn {
+            background-color: var(--admin-primary);
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background-color: #3a5bd9;
+        }
+
+        .secondary-btn {
+            background-color: var(--admin-secondary);
+            color: white;
+            margin-right: 10px;
+        }
+
+        .secondary-btn:hover {
+            background-color: #5a6268;
+        }
+
+        @media (min-width: 768px) {
+            .settings-container {
+                grid-template-columns: 1fr;
+                max-width: 800px;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/payment-settings.js"></script>
+</body>
+</html>

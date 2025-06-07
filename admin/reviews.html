@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Reviews - E-Book Store Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">E-Book<span>Store</span> Admin</a></h1>
+            </div>
+            <div class="nav-icons">
+                <a href="#" class="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </a>
+                <a href="#" class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="../index.html" class="view-site">
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="books.html">
+                            <i class="fas fa-book"></i>
+                            <span>E-Books</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html">
+                            <i class="fas fa-tags"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customers.html">
+                            <i class="fas fa-users"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="reviews.html">
+                            <i class="fas fa-star"></i>
+                            <span>Reviews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="page-header">
+                <h2>Manage Reviews</h2>
+                <p>View and manage customer reviews</p>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="action-bar">
+                <div class="search-filter">
+                    <input type="text" id="review-search" placeholder="Search reviews...">
+                    <select id="rating-filter">
+                        <option value="">All Ratings</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                    <select id="status-filter">
+                        <option value="">All Status</option>
+                        <option value="approved">Approved</option>
+                        <option value="pending">Pending</option>
+                        <option value="spam">Spam</option>
+                    </select>
+                </div>
+                <button id="export-reviews-btn" class="btn-secondary">
+                    <i class="fas fa-download"></i> Export
+                </button>
+            </div>
+
+            <!-- Reviews Table -->
+            <div class="reviews-table-container">
+                <table class="reviews-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="select-all-reviews">
+                            </th>
+                            <th>Book</th>
+                            <th>Customer</th>
+                            <th>Rating</th>
+                            <th>Review</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="review-checkbox">
+                            </td>
+                            <td>
+                                <div class="book-info">
+                                    <img src="../images/book1.svg" alt="Web Design Essentials">
+                                    <div>
+                                        <h5>Web Design Essentials</h5>
+                                        <small>John Smith</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <span>JD</span>
+                                    </div>
+                                    <span class="customer-name">John Doe</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="review-text">
+                                    <p>This book is amazing! It covers all the essential aspects of web design in a clear and concise manner.</p>
+                                </div>
+                            </td>
+                            <td>June 15, 2023</td>
+                            <td><span class="status-badge approved">Approved</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="#" class="view-btn" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="edit-btn" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="delete-btn" title="Delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="review-checkbox">
+                            </td>
+                            <td>
+                                <div class="book-info">
+                                    <img src="../images/book2.svg" alt="Business Strategy">
+                                    <div>
+                                        <h5>Business Strategy</h5>
+                                        <small>Sarah Johnson</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <span>SJ</span>
+                                    </div>
+                                    <span class="customer-name">Sarah Johnson</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="review-text">
+                                    <p>Great book for business professionals. The strategies are practical and easy to implement.</p>
+                                </div>
+                            </td>
+                            <td>June 10, 2023</td>
+                            <td><span class="status-badge approved">Approved</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="#" class="view-btn" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="edit-btn" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="delete-btn" title="Delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="review-checkbox">
+                            </td>
+                            <td>
+                                <div class="book-info">
+                                    <img src="../images/book3.svg" alt="Self Development">
+                                    <div>
+                                        <h5>Self Development</h5>
+                                        <small>Michael Brown</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <span>MB</span>
+                                    </div>
+                                    <span class="customer-name">Michael Brown</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>3.0</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="review-text">
+                                    <p>The book has some good insights, but I expected more practical exercises.</p>
+                                </div>
+                            </td>
+                            <td>June 5, 2023</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="#" class="view-btn" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="edit-btn" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="delete-btn" title="Delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="review-checkbox">
+                            </td>
+                            <td>
+                                <div class="book-info">
+                                    <img src="../images/book4.svg" alt="Fiction Adventure">
+                                    <div>
+                                        <h5>Fiction Adventure</h5>
+                                        <small>Emily Davis</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <span>ED</span>
+                                    </div>
+                                    <span class="customer-name">Emily Davis</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>2.0</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="review-text">
+                                    <p>The plot was predictable and the characters were not well developed.</p>
+                                </div>
+                            </td>
+                            <td>June 1, 2023</td>
+                            <td><span class="status-badge approved">Approved</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="#" class="view-btn" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="edit-btn" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="delete-btn" title="Delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="review-checkbox">
+                            </td>
+                            <td>
+                                <div class="book-info">
+                                    <img src="../images/book5.svg" alt="Graphic Design">
+                                    <div>
+                                        <h5>Graphic Design</h5>
+                                        <small>Alex Wilson</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <span>AW</span>
+                                    </div>
+                                    <span class="customer-name">Alex Wilson</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>1.0</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="review-text">
+                                    <p>This book is a waste of money. The content is outdated and not relevant to modern graphic design.</p>
+                                </div>
+                            </td>
+                            <td>May 28, 2023</td>
+                            <td><span class="status-badge spam">Spam</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="#" class="view-btn" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="edit-btn" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="delete-btn" title="Delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="review-checkbox">
+                            </td>
+                            <td>
+                                <div class="book-info">
+                                    <img src="../images/book6.svg" alt="Modern Technology">
+                                    <div>
+                                        <h5>Modern Technology</h5>
+                                        <small>Robert Chen</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="customer-info">
+                                    <div class="customer-avatar">
+                                        <span>RC</span>
+                                    </div>
+                                    <span class="customer-name">Robert Chen</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="review-text">
+                                    <p>Excellent book on modern technology trends. The author explains complex concepts in a simple way.</p>
+                                </div>
+                            </td>
+                            <td>May 25, 2023</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="#" class="view-btn" title="View"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="edit-btn" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="delete-btn" title="Delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <span class="pagination-ellipsis">...</span>
+                <button class="pagination-btn">10</button>
+                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Bulk Actions -->
+            <div class="bulk-actions">
+                <select id="bulk-action-select">
+                    <option value="">Bulk Actions</option>
+                    <option value="approved">Mark as Approved</option>
+                    <option value="pending">Mark as Pending</option>
+                    <option value="spam">Mark as Spam</option>
+                    <option value="delete">Delete</option>
+                </select>
+                <button class="btn-secondary" id="apply-bulk-action">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Details Modal -->
+    <div class="modal" id="review-modal">
+        <div class="modal-content review-details-modal">
+            <div class="modal-header">
+                <h3>Review Details</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="review-details-grid">
+                    <!-- Book Information -->
+                    <div class="book-details-section">
+                        <h4>Book Information</h4>
+                        <div class="book-details">
+                            <img src="../images/book1.svg" alt="Web Design Essentials" id="modal-book-cover">
+                            <div class="book-details-info">
+                                <h5 id="modal-book-title">Web Design Essentials</h5>
+                                <p id="modal-book-author">John Smith</p>
+                                <a href="#" class="view-book-btn">View Book</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Information -->
+                    <div class="customer-details-section">
+                        <h4>Customer Information</h4>
+                        <div class="customer-details">
+                            <div class="customer-avatar large">
+                                <span id="modal-customer-initials">JD</span>
+                            </div>
+                            <div class="customer-details-info">
+                                <h5 id="modal-customer-name">John Doe</h5>
+                                <p id="modal-customer-email">john.doe@example.com</p>
+                                <a href="#" class="view-customer-btn">View Customer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Content -->
+                <div class="review-content-section">
+                    <h4>Review Content</h4>
+                    <div class="review-content">
+                        <div class="review-meta">
+                            <div class="review-rating">
+                                <span class="rating-label">Rating:</span>
+                                <div class="rating" id="modal-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review-date">
+                                <span class="date-label">Date:</span>
+                                <span id="modal-review-date">June 15, 2023</span>
+                            </div>
+                            <div class="review-status">
+                                <span class="status-label">Status:</span>
+                                <select id="review-status-select">
+                                    <option value="approved" selected>Approved</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="spam">Spam</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="review-text-content">
+                            <h5>Review:</h5>
+                            <textarea id="review-text" rows="5">This book is amazing! It covers all the essential aspects of web design in a clear and concise manner.</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Response -->
+                <div class="admin-response-section">
+                    <h4>Admin Response</h4>
+                    <textarea id="admin-response" rows="3" placeholder="Add a public response to this review..."></textarea>
+                </div>
+
+                <!-- Admin Notes -->
+                <div class="admin-notes-section">
+                    <h4>Admin Notes</h4>
+                    <textarea id="admin-notes" rows="3" placeholder="Add private notes about this review (not visible to customers)..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="review-actions">
+                    <button class="btn-secondary" id="highlight-review">
+                        <i class="fas fa-thumbtack"></i> Highlight
+                    </button>
+                    <button class="btn-secondary" id="feature-review">
+                        <i class="fas fa-star"></i> Feature
+                    </button>
+                </div>
+                <div>
+                    <button class="btn-secondary" id="cancel-review-edit">Cancel</button>
+                    <button class="btn-primary" id="save-review-changes">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Delete</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this review? This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancel-delete">Cancel</button>
+                <button class="btn-danger" id="confirm-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <div class="container">
+            <p>&copy; 2023 E-Book Store Admin Panel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Review modal elements
+            const reviewModal = document.getElementById('review-modal');
+            const closeModalBtns = document.querySelectorAll('.close-modal');
+            const cancelReviewEditBtn = document.getElementById('cancel-review-edit');
+            const saveReviewChangesBtn = document.getElementById('save-review-changes');
+
+            // View review buttons
+            const viewBtns = document.querySelectorAll('.view-btn');
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    reviewModal.style.display = 'flex';
+                    
+                    // Get review data from the row
+                    const row = this.closest('tr');
+                    const bookTitle = row.querySelector('.book-info h5').textContent;
+                    const bookAuthor = row.querySelector('.book-info small').textContent;
+                    const bookCover = row.querySelector('.book-info img').src;
+                    const customerName = row.querySelector('.customer-name').textContent;
+                    const customerInitials = row.querySelector('.customer-avatar span').textContent;
+                    const rating = row.querySelector('.rating span').textContent;
+                    const reviewText = row.querySelector('.review-text p').textContent;
+                    const reviewDate = row.querySelector('td:nth-child(6)').textContent;
+                    const reviewStatus = row.querySelector('.status-badge').classList.contains('approved') ? 'approved' : 
+                                        row.querySelector('.status-badge').classList.contains('pending') ? 'pending' : 'spam';
+                    
+                    // Update modal with review data
+                    document.getElementById('modal-book-title').textContent = bookTitle;
+                    document.getElementById('modal-book-author').textContent = bookAuthor;
+                    document.getElementById('modal-book-cover').src = bookCover;
+                    document.getElementById('modal-customer-name').textContent = customerName;
+                    document.getElementById('modal-customer-initials').textContent = customerInitials;
+                    document.getElementById('modal-customer-email').textContent = customerName.toLowerCase().replace(' ', '.') + '@example.com';
+                    document.getElementById('modal-review-date').textContent = reviewDate;
+                    document.getElementById('review-status-select').value = reviewStatus;
+                    document.getElementById('review-text').value = reviewText;
+                    
+                    // Update rating stars
+                    const ratingValue = parseFloat(rating);
+                    const ratingStars = document.querySelectorAll('#modal-rating i');
+                    ratingStars.forEach((star, index) => {
+                        if (index < Math.floor(ratingValue)) {
+                            star.className = 'fas fa-star';
+                        } else if (index === Math.floor(ratingValue) && ratingValue % 1 !== 0) {
+                            star.className = 'fas fa-star-half-alt';
+                        } else {
+                            star.className = 'far fa-star';
+                        }
+                    });
+                    document.querySelector('#modal-rating span').textContent = ratingValue.toFixed(1);
+                });
+            });
+
+            // Close modal when close button or cancel button is clicked
+            closeModalBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    reviewModal.style.display = 'none';
+                    document.getElementById('delete-modal').style.display = 'none';
+                });
+            });
+
+            cancelReviewEditBtn.addEventListener('click', function() {
+                reviewModal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', function(event) {
+                if (event.target === reviewModal) {
+                    reviewModal.style.display = 'none';
+                }
+                if (event.target === document.getElementById('delete-modal')) {
+                    document.getElementById('delete-modal').style.display = 'none';
+                }
+            });
+
+            // Save review changes
+            saveReviewChangesBtn.addEventListener('click', function() {
+                // Simulate saving review changes
+                const newStatus = document.getElementById('review-status-select').value;
+                const newReviewText = document.getElementById('review-text').value;
+                const bookTitle = document.getElementById('modal-book-title').textContent;
+                
+                // Find the review row
+                const reviewRows = document.querySelectorAll('.reviews-table tbody tr');
+                let reviewRow = null;
+                
+                reviewRows.forEach(row => {
+                    const rowBookTitle = row.querySelector('.book-info h5').textContent;
+                    const rowCustomerName = row.querySelector('.customer-name').textContent;
+                    const modalCustomerName = document.getElementById('modal-customer-name').textContent;
+                    
+                    if (rowBookTitle === bookTitle && rowCustomerName === modalCustomerName) {
+                        reviewRow = row;
+                    }
+                });
+                
+                if (reviewRow) {
+                    // Update status badge class and text
+                    const statusBadge = reviewRow.querySelector('.status-badge');
+                    statusBadge.className = 'status-badge ' + newStatus;
+                    statusBadge.textContent = newStatus.charAt(0).toUpperCase() + newStatus.slice(1);
+                    
+                    // Update review text
+                    reviewRow.querySelector('.review-text p').textContent = newReviewText;
+                }
+                
+                alert('Review changes saved successfully!');
+                reviewModal.style.display = 'none';
+            });
+
+            // Delete review buttons
+            const deleteBtns = document.querySelectorAll('.delete-btn');
+            const deleteModal = document.getElementById('delete-modal');
+            const cancelDeleteBtn = document.getElementById('cancel-delete');
+            const confirmDeleteBtn = document.getElementById('confirm-delete');
+            let reviewToDelete = null;
+
+            deleteBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    deleteModal.style.display = 'flex';
+                    reviewToDelete = this.closest('tr');
+                });
+            });
+
+            cancelDeleteBtn.addEventListener('click', function() {
+                deleteModal.style.display = 'none';
+                reviewToDelete = null;
+            });
+
+            confirmDeleteBtn.addEventListener('click', function() {
+                if (reviewToDelete) {
+                    reviewToDelete.remove();
+                    alert('Review deleted successfully!');
+                    deleteModal.style.display = 'none';
+                    reviewToDelete = null;
+                }
+            });
+
+            // Select all checkbox
+            const selectAllCheckbox = document.getElementById('select-all-reviews');
+            const reviewCheckboxes = document.querySelectorAll('.review-checkbox');
+
+            selectAllCheckbox.addEventListener('change', function() {
+                reviewCheckboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                });
+            });
+
+            // Bulk actions
+            const bulkActionSelect = document.getElementById('bulk-action-select');
+            const applyBulkActionBtn = document.getElementById('apply-bulk-action');
+
+            applyBulkActionBtn.addEventListener('click', function() {
+                const selectedAction = bulkActionSelect.value;
+                if (!selectedAction) {
+                    alert('Please select an action');
+                    return;
+                }
+
+                const selectedReviews = document.querySelectorAll('.review-checkbox:checked');
+                if (selectedReviews.length === 0) {
+                    alert('Please select at least one review');
+                    return;
+                }
+
+                if (selectedAction === 'delete') {
+                    if (confirm(`Are you sure you want to delete ${selectedReviews.length} reviews? This action cannot be undone.`)) {
+                        selectedReviews.forEach(checkbox => {
+                            checkbox.closest('tr').remove();
+                        });
+                        alert('Reviews deleted successfully!');
+                    }
+                } else {
+                    // Handle other bulk actions
+                    selectedReviews.forEach(checkbox => {
+                        const statusBadge = checkbox.closest('tr').querySelector('.status-badge');
+                        statusBadge.className = 'status-badge ' + selectedAction;
+                        statusBadge.textContent = selectedAction.charAt(0).toUpperCase() + selectedAction.slice(1);
+                    });
+                    alert(`Status updated for ${selectedReviews.length} reviews!`);
+                }
+
+                // Reset bulk action select
+                bulkActionSelect.value = '';
+                selectAllCheckbox.checked = false;
+            });
+
+            // Search and filter functionality
+            const reviewSearch = document.getElementById('review-search');
+            const ratingFilter = document.getElementById('rating-filter');
+            const statusFilter = document.getElementById('status-filter');
+
+            function filterReviews() {
+                const searchTerm = reviewSearch.value.toLowerCase();
+                const ratingValue = ratingFilter.value;
+                const statusValue = statusFilter.value;
+
+                const reviewRows = document.querySelectorAll('.reviews-table tbody tr');
+                
+                reviewRows.forEach(row => {
+                    const bookTitle = row.querySelector('.book-info h5').textContent.toLowerCase();
+                    const bookAuthor = row.querySelector('.book-info small').textContent.toLowerCase();
+                    const customerName = row.querySelector('.customer-name').textContent.toLowerCase();
+                    const reviewText = row.querySelector('.review-text p').textContent.toLowerCase();
+                    const rating = row.querySelector('.rating span').textContent.charAt(0);
+                    const statusBadge = row.querySelector('.status-badge');
+                    const status = statusBadge.classList.contains('approved') ? 'approved' : 
+                                statusBadge.classList.contains('pending') ? 'pending' : 'spam';
+                    
+                    const matchesSearch = bookTitle.includes(searchTerm) || 
+                                        bookAuthor.includes(searchTerm) || 
+                                        customerName.includes(searchTerm) || 
+                                        reviewText.includes(searchTerm);
+                    const matchesRating = ratingValue === '' || rating === ratingValue;
+                    const matchesStatus = statusValue === '' || status === statusValue;
+                    
+                    if (matchesSearch && matchesRating && matchesStatus) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            reviewSearch.addEventListener('input', filterReviews);
+            ratingFilter.addEventListener('change', filterReviews);
+            statusFilter.addEventListener('change', filterReviews);
+
+            // Export reviews button
+            const exportReviewsBtn = document.getElementById('export-reviews-btn');
+            exportReviewsBtn.addEventListener('click', function() {
+                alert('Reviews exported successfully!');
+            });
+
+            // Highlight and feature review buttons
+            const highlightReviewBtn = document.getElementById('highlight-review');
+            const featureReviewBtn = document.getElementById('feature-review');
+
+            highlightReviewBtn.addEventListener('click', function() {
+                alert('Review highlighted successfully!');
+            });
+
+            featureReviewBtn.addEventListener('click', function() {
+                alert('Review featured successfully!');
+            });
+
+            // Pagination
+            const paginationBtns = document.querySelectorAll('.pagination-btn');
+            paginationBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (!this.disabled) {
+                        document.querySelector('.pagination-btn.active').classList.remove('active');
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Add styles for reviews page
+            const style = document.createElement('style');
+            style.textContent = `
+                .action-bar {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+
+                .search-filter {
+                    display: flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                }
+
+                .search-filter input,
+                .search-filter select {
+                    padding: 8px 12px;
+                    border: 1px solid var(--admin-border);
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                }
+
+                .reviews-table-container {
+                    overflow-x: auto;
+                    background-color: var(--admin-card-bg);
+                    border-radius: 10px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                    margin-bottom: 20px;
+                }
+
+                .reviews-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+
+                .reviews-table th,
+                .reviews-table td {
+                    padding: 12px 15px;
+                    text-align: left;
+                    border-bottom: 1px solid var(--admin-border);
+                }
+
+                .reviews-table th {
+                    background-color: var(--admin-light);
+                    color: var(--admin-text);
+                    font-weight: 600;
+                }
+
+                .reviews-table tbody tr:hover {
+                    background-color: rgba(74, 108, 247, 0.05);
+                }
+
+                .book-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .book-info img {
+                    width: 30px;
+                    height: 45px;
+                    object-fit: cover;
+                    border-radius: 3px;
+                }
+
+                .book-info h5 {
+                    margin: 0 0 5px 0;
+                    font-size: 0.9rem;
+                }
+
+                .book-info small {
+                    color: var(--admin-text-muted);
+                    font-size: 0.8rem;
+                }
+
+                .customer-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .customer-avatar {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    background-color: var(--admin-primary);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                }
+
+                .customer-avatar.large {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 1.2rem;
+                }
+
+                .customer-name {
+                    font-weight: 500;
+                }
+
+                .rating {
+                    display: flex;
+                    align-items: center;
+                    gap: 2px;
+                }
+
+                .rating i {
+                    color: #ffc107;
+                    font-size: 0.9rem;
+                }
+
+                .rating span {
+                    margin-left: 5px;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                }
+
+                .review-text {
+                    max-width: 300px;
+                }
+
+                .review-text p {
+                    margin: 0;
+                    font-size: 0.9rem;
+                    line-height: 1.4;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .status-badge {
+                    display: inline-block;
+                    padding: 5px 10px;
+                    border-radius: 20px;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                }
+
+                .status-badge.approved {
+                    background-color: rgba(40, 167, 69, 0.1);
+                    color: var(--admin-success);
+                }
+
+                .status-badge.pending {
+                    background-color: rgba(255, 193, 7, 0.1);
+                    color: var(--admin-warning);
+                }
+
+                .status-badge.spam {
+                    background-color: rgba(220, 53, 69, 0.1);
+                    color: var(--admin-danger);
+                }
+
+                .action-buttons {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                .view-btn,
+                .edit-btn,
+                .delete-btn {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    text-decoration: none;
+                    transition: background-color 0.3s ease;
+                }
+
+                .view-btn {
+                    background-color: var(--admin-primary);
+                }
+
+                .view-btn:hover {
+                    background-color: #3a5bd9;
+                }
+
+                .edit-btn {
+                    background-color: var(--admin-info);
+                }
+
+                .edit-btn:hover {
+                    background-color: #138496;
+                }
+
+                .delete-btn {
+                    background-color: var(--admin-danger);
+                }
+
+                .delete-btn:hover {
+                    background-color: #c82333;
+                }
+
+                .pagination {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 20px 0;
+                    gap: 5px;
+                }
+
+                .pagination-btn {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--admin-light);
+                    border: 1px solid var(--admin-border);
+                    color: var(--admin-text);
+                    font-size: 0.9rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+                .pagination-btn:hover:not(:disabled) {
+                    background-color: var(--admin-primary);
+                    color: white;
+                }
+
+                .pagination-btn.active {
+                    background-color: var(--admin-primary);
+                    color: white;
+                }
+
+                .pagination-btn:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+
+                .pagination-ellipsis {
+                    margin: 0 5px;
+                }
+
+                .bulk-actions {
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 20px;
+                }
+
+                .bulk-actions select {
+                    padding: 8px 12px;
+                    border: 1px solid var(--admin-border);
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                }
+
+                /* Review Details Modal Styles */
+                .review-details-modal {
+                    width: 80%;
+                    max-width: 1000px;
+                }
+
+                .review-details-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .book-details-section,
+                .customer-details-section,
+                .review-content-section,
+                .admin-response-section,
+                .admin-notes-section {
+                    background-color: var(--admin-light);
+                    border-radius: 10px;
+                    padding: 15px;
+                    margin-bottom: 20px;
+                }
+
+                .book-details-section h4,
+                .customer-details-section h4,
+                .review-content-section h4,
+                .admin-response-section h4,
+                .admin-notes-section h4 {
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                    font-size: 1.1rem;
+                    color: var(--admin-dark);
+                }
+
+                .book-details {
+                    display: flex;
+                    gap: 15px;
+                }
+
+                .book-details img {
+                    width: 80px;
+                    height: 120px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+
+                .book-details-info h5 {
+                    margin: 0 0 5px 0;
+                    font-size: 1.1rem;
+                }
+
+                .book-details-info p {
+                    margin: 0 0 15px 0;
+                    color: var(--admin-text-muted);
+                    font-size: 0.9rem;
+                }
+
+                .view-book-btn,
+                .view-customer-btn {
+                    display: inline-block;
+                    padding: 5px 10px;
+                    background-color: var(--admin-primary);
+                    color: white;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-size: 0.8rem;
+                    transition: background-color 0.3s ease;
+                }
+
+                .view-book-btn:hover,
+                .view-customer-btn:hover {
+                    background-color: #3a5bd9;
+                }
+
+                .customer-details {
+                    display: flex;
+                    gap: 15px;
+                }
+
+                .customer-details-info h5 {
+                    margin: 0 0 5px 0;
+                    font-size: 1.1rem;
+                }
+
+                .customer-details-info p {
+                    margin: 0 0 15px 0;
+                    color: var(--admin-text-muted);
+                    font-size: 0.9rem;
+                }
+
+                .review-meta {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    margin-bottom: 15px;
+                }
+
+                .review-rating,
+                .review-date,
+                .review-status {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .rating-label,
+                .date-label,
+                .status-label {
+                    font-size: 0.9rem;
+                    color: var(--admin-text-muted);
+                }
+
+                #review-status-select {
+                    padding: 5px 10px;
+                    border: 1px solid var(--admin-border);
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                }
+
+                .review-text-content h5 {
+                    margin: 0 0 10px 0;
+                    font-size: 0.9rem;
+                    color: var(--admin-text-muted);
+                }
+
+                #review-text,
+                #admin-response,
+                #admin-notes {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid var(--admin-border);
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                    resize: vertical;
+                }
+
+                .review-actions {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                @media (max-width: 992px) {
+                    .review-details-grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .review-details-modal {
+                        width: 95%;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .action-bar {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    .search-filter {
+                        width: 100%;
+                    }
+
+                    .search-filter input,
+                    .search-filter select {
+                        flex: 1;
+                    }
+
+                    .modal-footer {
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    .review-actions {
+                        width: 100%;
+                        justify-content: space-between;
+                    }
+
+                    .review-meta {
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

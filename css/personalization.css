@@ -1,0 +1,297 @@
+/**
+ * Personalization CSS
+ * Styles for personalized recommendations and user preferences
+ */
+
+/* Personalized recommendations section */
+.personalized-section {
+    padding: 40px 0;
+    background-color: var(--body-bg);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.personalized-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.personalized-title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.personalized-subtitle {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin: 5px 0 0 0;
+}
+
+.personalized-controls {
+    display: flex;
+    align-items: center;
+}
+
+.personalized-refresh {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.personalized-refresh:hover {
+    background-color: rgba(74, 111, 220, 0.1);
+}
+
+.personalized-refresh i {
+    margin-right: 5px;
+}
+
+/* Personalized book grid */
+.personalized-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Reading history section */
+.reading-history {
+    margin-top: 40px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.history-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.history-img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.history-info {
+    flex: 1;
+}
+
+.history-title {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+}
+
+.history-author {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin: 0 0 5px 0;
+}
+
+.history-progress {
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.history-progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.history-actions {
+    display: flex;
+    margin-left: 15px;
+}
+
+.history-action-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.history-action-btn:hover {
+    background-color: rgba(74, 111, 220, 0.1);
+}
+
+/* User preferences panel */
+.preferences-panel {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100vh;
+    background-color: var(--card-bg);
+    box-shadow: -5px 0 15px var(--shadow-color);
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.preferences-panel.active {
+    right: 0;
+}
+
+.preferences-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.preferences-title {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.close-preferences {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.preferences-content {
+    padding: 20px;
+}
+
+.preference-section {
+    margin-bottom: 30px;
+}
+
+.preference-section-title {
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    color: var(--text-color);
+}
+
+.preference-option {
+    margin-bottom: 15px;
+}
+
+.preference-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.preference-checkbox {
+    margin-right: 10px;
+}
+
+.preference-name {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.preference-slider {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.preference-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.preference-btn {
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.preference-save {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    margin-left: 10px;
+}
+
+.preference-reset {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.preferences-toggle {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.preferences-toggle:hover {
+    transform: scale(1.1);
+}
+
+.preferences-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.preferences-overlay.active {
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .preferences-panel {
+        width: 300px;
+    }
+    
+    .preferences-toggle {
+        width: 40px;
+        height: 40px;
+        bottom: 70px;
+    }
+}
